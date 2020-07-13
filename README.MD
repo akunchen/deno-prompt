@@ -33,7 +33,7 @@ A command line interaction utils like [inquirer](https://www.npmjs.com/package/i
 ## basic usages
 
 ```typescript
-import Prompt from "../mod.ts";
+import Prompt from "https://deno.land/x/prompt";
 
 const answers = await Prompt.prompts([
   { type: "text", name: "name", message: "Please input your name: " },
@@ -62,7 +62,7 @@ It supported to define custom component. Here is am example.
 - Define component which must has static function called `run` and accept `args` which extends `PromptParams`.
 
 ```typescript
-import Prompt from "../mod.ts";
+import Prompt from "https://deno.land/x/prompt";
 
 class CustomComponent {
   static async run<T extends PromptParams>(args: T) {
@@ -76,7 +76,7 @@ Prompt.registerComponent("custom", CustomComponent);
 - Usage.(You must put bellow code after define component)
 
 ```typescript
-import Prompt from "../mod.ts";
+import Prompt from "https://deno.land/x/prompt";
 
 const answers = await Prompt.prompts([
   { type: "custom", name: "name", message: "Please input your name: " },
